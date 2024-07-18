@@ -29,8 +29,8 @@ export let forwardbotres: boolean
   }
 })();
 
-export const webhookurl = await ngrokurlgen();
-// export const webhookurl = WEBHOOK_URL;
+// export const webhookurl = await ngrokurlgen();
+export const webhookurl = WEBHOOK_URL;
 if(webhookurl){
   console.log(webhookurl);
 

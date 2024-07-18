@@ -2,7 +2,6 @@ import { Bot, webhookCallback } from "grammy";
 import { fastify } from "fastify";
 import { autoRetry } from "@grammyjs/auto-retry";
 import "dotenv/config";
-import { ngrokurlgen } from "./forwardBot/helpers/helperFunc.js";
 import { forwardBotComposer } from "./forwardBot/controllers/forwardbotComposer.js";
 import { SlaveforwardBotComposer } from "./forwardBot/controllers/slaveComposer.js";
 import { forwardbotmongoconnect } from "./forwardBot/db/dbConfig.js";
@@ -19,8 +18,8 @@ export let forwardbotres;
         console.log("Connected successfully to Forward bot DB server");
     }
 })();
-export const webhookurl = await ngrokurlgen();
-// export const webhookurl = WEBHOOK_URL;
+// export const webhookurl = await ngrokurlgen();
+export const webhookurl = WEBHOOK_URL;
 if (webhookurl) {
     console.log(webhookurl);
     owner = OWNER;
